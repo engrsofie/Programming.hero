@@ -6,13 +6,14 @@ h1{
     color: orange;
 }
 .half-width{
-   width: 40%;
-   float:left;
-   margin-left: 0.5%;
-   padding-left: 0.5%;
+    width: 40%;
+    float:left;
+   margin-left: 2%;
+   padding-left: 2%;
 }
 .half-width img{
-width: 100%;
+    width: 100%;
+    
 }
 .top-banner{
     background-image: url("images/top-banner.png");
@@ -51,9 +52,9 @@ p{
     color: orange;
 }
 .single-experiences{
-    box-shadow: 10px 10px 40px;
+    box-shadow: 5px 5px 5px;
     border-radius: 10px;
-    height: 100%;  
+    height: 50%;  
     background-color: white;
 }
 .experiences-area{
