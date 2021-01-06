@@ -4,15 +4,23 @@ body{
     padding: 10px;
     margin: 20px;
 }
-.head ol li a {
-    
+.head ul li a {
+    text-decoration: none; 
+}
+.head ul li {
     float: right;
     text-decoration: none;
+    display:inline-block;
+    margin-left: 10px;
+    padding-left: 20px;
+   font-size: 20px;
+    
 }
 
 .top-header{
     width: 100%;
     height: 400px;
+    padding-top: 30px;
 }
 .top-header h2 span{
     color: orange;
@@ -51,6 +59,10 @@ body{
     float: left;
     width: 40%;
     }
+    section.main-project {
+    display: block;
+    height: 300px;
+}
     .project{
         text-align: center;
     }
@@ -67,22 +79,21 @@ body{
     width: 400px;
     height: 300px;
 }
-/* 
-.work img {
-    margin-top: 5%;
-    margin-left: 360px;
-    width: 50%;
-    height: 200px;
-} */
 .kemon-acho {
-    background-image: url(images/work.jpg);
-    background-size: 100% ;
+     background-image: url(images/work.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 400px;
-    margin-left: 25%;
-    width: 50%;
+    /* margin-top: 400px; */
+    margin: auto;
+    width: 55%;
     height: 200px;
-    border: solid gray 5px;
+    border-radius: 20px;
+}
+.history{
+    padding: 20px;
+}
+.kemon-acho{
+    margin: 100px auto;
 }
 .kemon-acho p {
 margin-left: 250px;
@@ -93,11 +104,40 @@ text-shadow: brown;
 padding: 5px;
 }
 .kemon-acho a {
-
-    margin-left: 600px;
+    /* margin-left: 600px;
+    font-size: 30px;
+    border-radius: 20px; */
 }
-
+.kemon-acho h1 {
+    color: azure;
+    font-size: xx-large;
+    margin-top: 55px;
+    margin-left: 50px;
+    
+}
 
 .footer{
     text-align: center;
+}
+.chat{
+    text-decoration: none;
+    background-image: linear-gradient( 45deg, lightSalmon, tomato);
+    padding: 10px;
+    font-weight: 700;
+    color: rgb(238, 228, 214);
+    border-radius: 5px;
+    float: right;
+    margin-top: -67px;
+}
+    .chat:hover {
+    color: teal;
+    background-color: rgb(177, 157, 121);
+    background-image: -webkit-repeating-radial-gradient(rgb(201, 182, 182),rgb(223, 231, 223),rgb(47, 43, 51));
+    }
+
+
+    .footer .logo img {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
 }
