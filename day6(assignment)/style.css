@@ -59,7 +59,7 @@ body{
     float: left;
     width: 40%;
     }
-    section.main-project {
+    .main-project {
     display: block;
     height: 300px;
 }
@@ -69,21 +69,26 @@ body{
     .project span{
         color: orange;
     }
+    .project-1{
+        width: 28%;
+        margin-left: 5%;
+        /* border: 2px solid red; */
+        float: left;
+    }
 .project-1 img {
-    margin-left: 8%;
-    float: left;
+    /* margin-left: 8%; */
+    /* float: left; */
     border-radius: 20px;
     box-shadow: rgb(128, 28, 28);
 }
 .project-1 img{
-    width: 400px;
+    width: 100%;
     height: 300px;
 }
 .kemon-acho {
      background-image: url(images/work.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    /* margin-top: 400px; */
     margin: auto;
     width: 55%;
     height: 200px;
