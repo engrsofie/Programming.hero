@@ -67,12 +67,37 @@ body{
     width: 400px;
     height: 300px;
 }
+/* 
 .work img {
     margin-top: 5%;
     margin-left: 360px;
-    width: 60%;
+    width: 50%;
     height: 200px;
+} */
+.kemon-acho {
+    background-image: url(images/work.jpg);
+    background-size: 100% ;
+    background-repeat: no-repeat;
+    margin-top: 400px;
+    margin-left: 25%;
+    width: 50%;
+    height: 200px;
+    border: solid gray 5px;
 }
+.kemon-acho p {
+margin-left: 250px;
+margin-top: 70px;
+font-size: 30px;
+color: rgb(8, 8, 8);
+text-shadow: brown;
+padding: 5px;
+}
+.kemon-acho a {
+
+    margin-left: 600px;
+}
+
+
 .footer{
     text-align: center;
 }
