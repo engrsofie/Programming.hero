@@ -1,0 +1,78 @@
+body{
+    font-family: 'Cinzel', serif;
+    background-color: rgb(221, 233, 221);
+    padding: 10px;
+    margin: 20px;
+}
+.head ol li a {
+    
+    float: right;
+    text-decoration: none;
+}
+
+.top-header{
+    width: 100%;
+    height: 400px;
+}
+.top-header h2 span{
+    color: orange;
+    font-size: 40px;
+}
+.top-header img{
+    width: 300px;
+    margin-left: 5px;
+    padding-left: 5px;
+    float: right;
+}
+.a-tag{
+    text-decoration: none;
+    background-image: linear-gradient( 45deg, lightSalmon, tomato);
+    padding: 10px;
+    font-weight: 700;
+    color: rgb(238, 228, 214);
+    border-radius: 20px;
+}
+    .a-tag:hover {
+    color: teal;
+    background-color: rgb(177, 157, 121);
+    background-image: -webkit-repeating-radial-gradient(rgb(201, 182, 182),rgb(223, 231, 223),rgb(47, 43, 51));
+    }
+    .profile{
+    width: 100%;
+    height: 400px;
+    margin: 5%;
+    }
+    .profile img {
+        height: 300px;
+        padding: 2%;
+        margin: 4%;
+    }
+    .about{
+    float: left;
+    width: 40%;
+    }
+    .project{
+        text-align: center;
+    }
+    .project span{
+        color: orange;
+    }
+.project-1 img {
+    margin-left: 8%;
+    float: left;
+    border-radius: 20px;
+    box-shadow: rgb(128, 28, 28);
+}
+.project-1 img{
+    width: 400px;
+    height: 300px;
+}
+.work img {
+    margin-top: 5%;
+    margin-left: 360px;
+    width: 60%;
+    height: 200px;
+}
+.footer{
+    text-align: center;
+}
