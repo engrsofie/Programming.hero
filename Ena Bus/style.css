@@ -7,11 +7,13 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background:url("images/Ena.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
     background-size: cover;
+}
+#background-image{
+background:url("images/Ena.png");
 }
 nav{
     height: 50px;
@@ -153,4 +155,7 @@ table {
   }
   #title-part{
       margin-left: 20%;
+  }
+  #ticket-part{
+      display: none;
   }
