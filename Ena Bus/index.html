@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+
+<body id="hidden">
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main class="main-content container">
+
+        <div class="booking-content">
+            <h1>Ena Bus</h1>
+            <p> <i> Ena is simply dummy text of the printing and typesetting industry. Ena has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</i> </p>
+        </div>
+
+
+        <div class="booking-form">
+            <h3>Explore By Bus</h3>
+
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">From</label>
+                    <input class="inp-style" type="text" name="" placeholder="Dhaka">
+                </div>
+                <div class="input-group">
+                    <label" for="">From</label>
+                    <input class="inp-style" type="text" name="" placeholder="Mymensingh">
+                </div>
+            </div>
+
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+            <div class="inputs">
+                <div class="input-group f-class">
+                <div>
+                    <label for="" >First Class ($220)</label>
+                    <input id="ticket-price" class="inp-style inp-width" type="number" value="0">
+                </div>
+                <div class="plus-minus-btn">
+                
+                    <button id="ticket-price-increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                    <button id="ticket-price-decrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+ 
+                </div>
+                
+                
+            </div>
+                <div class="input-group f-class">
+                    <div>
+                        <label for="" >Economy ($100)</label>
+                        <input id="economy-price" class="inp-style inp-width" type="number" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                           <button id="economy-increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                    <button id="economy-decrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p id="sub-total">$00</p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p id="vat-amount">$00</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p id="grand-total">$00</p>
+                    </div>
+                </div>
+            </div>
+            <button id='confirm-order' class="btn-style">Book Now</button>
+        </div>
+    </main>
+
+
+<div id="ticket-part">
+    <div class="head">
+        <h1>BUS TICKET</h1> 
+        <h4>Bookin ID : DKA00115215421</h4>
+    </div>
+
+
+    <div class="details">
+    <table>
+     
+      <tr>
+        <H3 id="title-part">Trip Details</H3>
+        <td>Bus:</td>
+        <td>Ena (DHA-MYM)</td>
+      </tr>
+      <tr>
+        <td>Date:</td>
+        <td>19/01/2021</td>
+      </tr>
+      <tr>
+        <td>Departure to:</td>
+        <td>Dhaka at 10.00AM</td>
+      </tr>
+      <tr>
+        <td>Arrive to:</td>
+        <td>Mymensingh at 02.00PM</td>
+      </tr>
+      <tr>
+        <td>Ticket Type: 1st Class</td>
+        <td>Canada</td>
+      </tr>
+      <tr>
+        <td>Seat: </td>
+        <td>B1</td>
+      </tr>
+    </table>      
+</div>
+
+<div class="details">
+<table>
+ 
+  <tr>
+    <H3 id="title-part">Customer and Booking Details</H3>
+    <td>Customer Name:</td>
+    <td>MD: Sohel</td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td>01926385012</td>
+  </tr>
+  <tr>
+    <td>Booking Total:</td>
+    <td>220TK + VAT</td>
+  </tr>
+  <tr>
+    <td>Online Deposit Payment:</td>
+    <td>bKash</td>
+  </tr>
+</table>  
+</div>
+</div>
+
+<!--
+    End html part
+
+   Start part off Javascript 
+-->
+
+<script>
+
+    document.getElementById("ticket-price-increase").addEventListener('click', function(){
+        handleTicketChange(true);
+});
+
+document.getElementById("ticket-price-decrease").addEventListener('click', function(){
+handleTicketChange(false);
+});
+function handleTicketChange(isInIncrease){
+    const caseInput = document.getElementById("ticket-price");
+const caseCount = parseInt(caseInput.value)
+// const caseNewCount= caseCount - 1;
+let caseNewCount = caseCount;
+if(isInIncrease==true){
+    caseNewCount = caseCount+1;
+}
+if(isInIncrease == false && caseCount>0){
+    caseNewCount= caseCount-1;
+}
+caseInput.value = caseNewCount;
+// const caseTotal = caseNewCount * 220
+// document.getElementById('ticket-total').innerText= "Total="+ caseTotal;
+calculateTotal();
+}
+
+
+
+document.getElementById("economy-increase").addEventListener('click', function(){
+        handleEconomyChange(true);
+});
+
+document.getElementById("economy-decrease").addEventListener('click', function(){
+handleEconomyChange(false);
+});
+
+
+function handleEconomyChange(isInIncrease){
+    const caseInput = document.getElementById("economy-price");
+const caseCount = parseInt(caseInput.value)
+// const caseNewCount= caseCount - 1;
+let caseNewCount = caseCount;
+if(isInIncrease==true){
+    caseNewCount = caseCount+1;
+}
+if(isInIncrease == false && caseCount>0){
+    caseNewCount= caseCount-1;
+}
+caseInput.value = caseNewCount;
+// const caseTotal = caseNewCount * 100
+// document.getElementById('economy-total').innerText= "economy="+ caseTotal;
+calculateTotal();
+}
+
+
+
+function calculateTotal(){
+const ticketInput = document.getElementById('ticket-price');
+const ticketPrice = parseInt(ticketInput.value);
+
+const economyInput = document.getElementById('economy-price');
+const economyPrice = parseInt(economyInput.value);
+
+const totalPrice = ticketPrice * 220 + economyPrice * 100;
+document.getElementById("sub-total").innerText=totalPrice;
+
+
+
+
+const vat = totalPrice * 0.1;
+document.getElementById('vat-amount').innerText = vat;
+
+const grandTotal = totalPrice + vat;
+document.getElementById("grand-total").innerText = grandTotal;
+}
+
+
+const orderBtn = document.getElementById('confirm-order');
+orderBtn.addEventListener("click", function(){
+const outputArea = document.getElementById("hidden");
+outputArea.style.display = "none";
+const ticketPart = document.getElementById("ticket-part");
+ticketPart.style.display = "block";
+})
+
+
+
+
+
+
+// document.getElementById("ticket-price-increase").addEventListener('click', function(){
+// const caseInput = document.getElementById("ticket-price");
+// const caseCount = parseInt(caseInput.value)
+// const caseNewCount= caseCount + 1;
+// caseInput.value = caseNewCount;
+// const caseTotal = caseNewCount * 220
+// document.getElementById('ticket-total').innerText= "Total="+ caseTotal;
+// })
+
+// document.getElementById("ticket-price-decrease").addEventListener('click', function(){
+// const caseInput = document.getElementById("ticket-price");
+// const caseCount = parseInt(caseInput.value)
+// const caseNewCount= caseCount - 1;
+// caseInput.value = caseNewCount;
+// const caseTotal = caseNewCount * 220
+// document.getElementById('ticket-total').innerText= "Total="+ caseTotal;
+// })
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
