@@ -1,0 +1,23 @@
+body{
+    background-color:#d3d365;   
+}
+#meals-container{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+}
+
+img{
+    height: 300px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#input-field{
+    margin-left: 500px;
+    height: 25px;
+    width: 300px;
+}
+#search-btn{
+    height: 30px;
+    width: 80px;   
+}
