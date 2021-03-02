@@ -1,0 +1,13 @@
+{
+    "emmet.excludeLanguages": [
+
+
+"emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "razor": "html",
+    "plaintext": "pug"
+}
+        "markdown"
+    ],
+    "emmet.extensionsPath": ""
+}

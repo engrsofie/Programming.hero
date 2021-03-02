@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500;600;700;800&family=Redressed&display=swap');
+body {
+    background: #6308F5;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    width: 94%;
+    margin: 0 auto;
+}

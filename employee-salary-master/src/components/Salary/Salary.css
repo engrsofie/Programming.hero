@@ -1,0 +1,38 @@
+.salary__card {
+    background: #fff;
+    border-radius: 5px;
+    padding: 9px;
+    position: sticky;
+    top: 0;
+}
+
+.salary__summary{
+    text-align: center;
+    color: #721bfd;
+    font-size: 25px;
+    margin-bottom: 15px;
+    text-shadow: 0px 3px 5px #721bfd4b;
+}
+
+.salary__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.salary__table tr td {
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #eee;
+}
+
+.salary__table tr td:first-child {
+    font-family: 'Raleway', sans-serif;
+    color: #444;
+    font-weight: 700;
+}
+
+.salary__table tr td:last-child {
+    width: 125px;
+    color: #666;
+    font-weight: 600;
+}

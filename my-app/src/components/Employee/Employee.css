@@ -1,0 +1,85 @@
+.employee__card {
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.employee__card:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.employee__img--box {
+    width: 140px;
+    height: 140px;
+    border-radius: 5px;
+    overflow: hidden;
+    transform: translate(10px, -12px);
+    box-shadow: 0 5px 20px #4500b462;
+    transition: .4s;
+}
+
+.employee__card:hover .employee__img--box{
+    transform: translate(0, 0);
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 5px 20px #4500b400;
+}
+
+.employee__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.employee__info--box {
+    width: calc(100% - 160px);
+    padding: 10px;
+}
+
+.employee__name {
+    color: #222;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    margin-bottom: 2px;
+    color: #5f03f3cc;
+}
+
+.employee__salary {
+    color: #00000075;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.employee__btn {
+    padding: 10px 20px;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid transparent;
+    background: #721bfd;
+    transition: .2s linear;
+}
+
+.employee__btn:hover {
+    color: #721bfd;
+    background: #fff;
+    border: 1px solid #721bfd;
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 10px 0 #4500b462;
+}
+
+.employee__btn.disabled{
+    pointer-events: none;
+    background: #a36aff;
+}
+
+.employee__btn:last-child {
+    margin-left: 10px;
+}

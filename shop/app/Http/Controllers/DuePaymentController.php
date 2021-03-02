@@ -1,0 +1,174 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Payment;
+use App\Models\PaymentCostItem;
+use App\Models\SubCategories;
+use App\Models\Clients;
+use App\Models\ProjectItem;
+use App\Models\AccountSetting;
+use App\Models\PaymentMethod;
+use App\Models\PaymentHistory;
+use DB;
+use Validator;
+use Auth;
+
+class DuePaymentController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        
+         $query = Payment::leftJoin('clients','payment.fk_client_id','=','clients.id')
+         ->leftJoin('inventory_branch','payment.fk_branch_id','=','inventory_branch.id')
+        ->leftJoin('account','payment.fk_account_id','=','account.id')
+        ->leftJoin('payment_method','payment.fk_method_id','=','payment_method.id')
+        ->whereColumn('payment.amount', '>', 'payment.total_paid')
+        ->select('payment.*','account.account_name','clients.client_name','payment_method.method_name','branch_name')
+        ->orderBy('id','DESC');
+        if(Auth::user()->isRole('administrator')){
+            $getDuePayment=$query->get();
+        }else{
+            $getDuePayment=$query->where(['payment.fk_branch_id'=>Auth::user()->fk_branch_id,'payment.fk_company_id'=>Auth::user()->fk_company_id])->get();
+
+        }
+        //return $getDuePayment;
+
+        return view('payment.viewDuePayments', compact('getDuePayment'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $getPaymentData =Payment::leftJoin('clients','payment.fk_client_id','=','clients.id')
+        ->leftJoin('account','payment.fk_account_id','=','account.id')
+        ->leftJoin('payment_method','payment.fk_method_id','=','payment_method.id')
+        ->select('payment.*','account.account_name','clients.client_name','payment_method.method_name')
+        ->where('payment.id',$id)
+        ->first();
+
+        
+        $getDuePaymentData = PaymentCostItem::
+        leftJoin('sub_category','payment_cost_item.fk_sub_category_id','=','sub_category.id')
+        ->where('fk_payment_id',$id)
+        ->whereColumn('total_amount', '>', 'paid_amount')
+        ->select('payment_cost_item.*','sub_category.sub_category_name')
+        ->get();
+
+        return view('payment.singleDuePaymentEdit', compact('getPaymentData','getDuePaymentData'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $getPaymentData = Payment::findOrFail($id);
+        $validator = Validator::make($request->all(),[
+            't_date' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $input = $request->all();
+        $lastId=PaymentHistory::max('invoice_id');
+        if($lastId!=null){
+            $input['invoice_no']=$lastId+1;
+        }else{
+            $input['invoice_no'] = date('ymd').'1';
+        }
+        
+        try {
+            //print_r($input['paid']);exit;
+            $paymentExistsId = sizeof($input['payment_item_old_id']);
+            for ($i=0; $i < $paymentExistsId; $i++) { 
+                $paymentItemId = $input['payment_item_old_id'][$i];
+                $existsPaid = PaymentCostItem::findOrFail($paymentItemId);
+                $newPaidAmount = intval($existsPaid->paid_amount)+intval($input['paid'][$i]);
+                $paid_Amount = PaymentCostItem::updatePaidAmount($paymentItemId,$newPaidAmount);
+                PaymentHistory::create([
+                    'fk_payment_item_id'=>$paymentItemId,
+                    'created_by'=>$input['updated_by'],
+                    'invoice_id'=>$input['invoice_no'],
+                    'last_due'=>$input['last_due'][$i],
+                    'paid'=>$input['paid'][$i],
+                    'payment_date'=>$input['t_date'],
+                    ]);
+                //return $newPaidAmount;
+            }
+            $getPaymentData->update([
+                'total_paid'=>$getPaymentData->total_paid+$input['total_paid'],
+                ]);
+            $bug = 0;
+        } catch (\Exception $e) {
+            $bug = $e->errorInfo[1];
+            $bug1 = $e->errorInfo[2];
+        }
+       
+        if($bug == 0){
+            return redirect("payment/".$input['invoice_no']);
+        }else{
+            return redirect()->back()->with('error','Something Error Found !, Please try again.'.$bug1);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+}

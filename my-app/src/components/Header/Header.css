@@ -1,0 +1,12 @@
+.navbar {
+    background: #fff;
+    padding: 15px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+.navbar__logo {
+    font-size: 40px;
+    font-family: 'Redressed', cursive;
+    text-align: center;
+    color: #721bfd;
+}
