@@ -1,0 +1,48 @@
+body {
+    /* background-color: black; */
+    height:1000px;
+    font-family: 'specimen','Poppins';
+}
+.top {
+text-align: center;
+}
+.top p {
+    font-size:20px;
+}
+.box{
+    position:relative;
+    margin-top:100px;
+    display: flex;
+    justify-content:center;
+}
+.common{
+    width:380px;
+    height:320px;
+    position: absolute;
+    box-shadow: 5px 5px 15px grey;
+    border-radius:10px;  
+    display: inline-block;
+    border-top: 10px solid salmon;
+}
+.team-builder{
+
+}
+.Supervisor{
+
+top:220px;
+left:300px;
+}
+.Calculator{
+
+top:220px;
+right:300px;
+}
+.Karma{
+top:350px;
+
+}
+.images img{
+    margin-left: 270px;
+    margin-top: 110px;
+}
+
